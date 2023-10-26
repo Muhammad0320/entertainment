@@ -97,12 +97,15 @@ const Icon = styled.p`
   cursor: pointer;
   transition: stroke 0.3s;
 
+  visibility: hidden;
+
   &:hover {
     background-image: linear-gradient(
       rgba(255, 255, 255, 0.7),
       rgba(255, 255, 255, 0.7)
     );
     stroke: var(--color-primary);
+    visibility: visible;
   }
 `;
 
@@ -175,31 +178,27 @@ function GridItem({ trend, data }) {
   const {
     title,
     category,
-    isBookmarked,
+
     rating,
     year,
-    thumbnail: {
-      regular: { large },
-    },
+    thumbnail: { regular },
   } = data;
 
   const CategoryIcon = category === "Movie" ? MovieIcon : TvIcon;
 
-  const BookmarkIcon = isBookmarked ? BookmarkFull : BookmarkEmpty;
+  // const BookmarkIcon = isBookmarked ? BookmarkFull : BookmarkEmpty;
 
   return (
     <StyledList trend={trend}>
       <Figure>
-        <Image src={large} alt="Image of movie" trend={trend} />
+        <Image src={regular} alt="Image of movie" trend={trend} />
         <FigCaption>
           <SVG src={PlayIcon} />
           <span> play </span>
         </FigCaption>
       </Figure>
 
-      <Icon>
-        <SVG src={BookmarkIcon} />
-      </Icon>
+      <Icon>{/* <SVG src={BookmarkIcon} /> */}</Icon>
 
       <MovieInfo trend={trend}>
         <MovieDetails trend={trend}>

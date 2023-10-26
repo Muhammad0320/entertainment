@@ -48,7 +48,7 @@ function HomePage() {
       </ContainerHomePage>
 
       <StyledList layout="repeat(auto-fill, minmax(25rem, 1fr))">
-        {movieData.map((item) => (
+        {allMovies.map((item) => (
           <GridItem data={item} key={item.title} />
         ))}
       </StyledList>
