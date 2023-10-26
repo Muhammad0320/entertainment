@@ -33,6 +33,17 @@ function SignupForm() {
       <Heading> Create Account </Heading>
 
       <Form onSubmit={handleSubmit(onSubmit)}>
+        <FormRow error={errors?.name?.message}>
+          <Input
+            disabled={isLoading}
+            placeholder="Name"
+            variation="auth"
+            {...register("name", {
+              required: "This field is required",
+            })}
+          />
+        </FormRow>
+
         <FormRow error={errors?.email?.message}>
           <Input
             disabled={isLoading}
@@ -44,17 +55,6 @@ function SignupForm() {
                 value: /\S+@\S+\.\S+/,
                 message: " Wrong format, Provide valid email!",
               },
-            })}
-          />
-        </FormRow>
-
-        <FormRow error={errors?.name?.message}>
-          <Input
-            disabled={isLoading}
-            placeholder="Name"
-            variation="auth"
-            {...register("name", {
-              required: "This field is required",
             })}
           />
         </FormRow>
