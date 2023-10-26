@@ -15,12 +15,13 @@ export const loginApi = async ({ email, password }) => {
   return res.data;
 };
 
-export const signupApi = async ({ email, password, passwordConfirm }) => {
+export const signupApi = async ({ name, email, password, passwordConfirm }) => {
   const res = await axios({
     method: "POST",
     withCredentials: true,
     url: `${BASE_URL}/users/signup`,
     data: {
+      name,
       email,
       password,
       passwordConfirm,
