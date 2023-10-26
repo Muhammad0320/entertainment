@@ -6,19 +6,14 @@ import Button from "../ui/Button";
 import AlternativeAuthentication from "../ui/AlternativeAuthentication";
 import { useForm } from "react-hook-form";
 import { FormContainer } from "../ui/FormContainer";
-import { useNavigate } from "react-router-dom";
 
 function SignupForm() {
   const { register, formState, reset, handleSubmit, getValues } = useForm();
 
   const { errors } = formState;
 
-  const navigate = useNavigate();
-
-  const onSubmit = () => {
+  const onSubmit = ({}) => {
     reset();
-
-    navigate("/home");
   };
 
   return (
@@ -36,6 +31,16 @@ function SignupForm() {
                 value: /\S+@\S+\.\S+/,
                 message: " Wrong format, Provide valid email!",
               },
+            })}
+          />
+        </FormRow>
+
+        <FormRow error={errors?.name?.message}>
+          <Input
+            placeholder="Name"
+            variation="auth"
+            {...register("name", {
+              required: "This field is required",
             })}
           />
         </FormRow>
