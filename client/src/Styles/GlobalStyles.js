@@ -82,6 +82,13 @@ button{
 
 button {
   cursor: pointer;
+
+  &:disabled {
+
+    background-color: var(--color-red-light);
+
+  }
+
 }
 
 *:disabled {
