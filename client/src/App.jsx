@@ -11,6 +11,7 @@ import GlobalStyles from "./Styles/GlobalStyles";
 import TVSeries from "./pages/TVSeries";
 import { ViewPortProvider } from "./contexts/Viewport";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -39,6 +40,29 @@ function App() {
             <Route path="signup" element={<Signup />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
+
+          <Toaster
+            position="top-center"
+            gutter={13}
+            containerStyle={{ margin: "8px" }}
+            toastOptions={{
+              error: {
+                duration: 6000,
+              },
+
+              success: {
+                duration: 4000,
+              },
+
+              style: {
+                padding: "16px 24px",
+                fontSize: "16px",
+                backgroundColor: "var(--color-blue-dark)",
+                color: "var(--color-white)",
+                maxWidth: "500px",
+              },
+            }}
+          />
         </BrowserRouter>
       </ViewPortProvider>
     </QueryClientProvider>
