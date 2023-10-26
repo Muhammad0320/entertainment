@@ -10,27 +10,38 @@ import PageNotFound from "./pages/PageNotFound";
 import GlobalStyles from "./Styles/GlobalStyles";
 import TVSeries from "./pages/TVSeries";
 import { ViewPortProvider } from "./contexts/Viewport";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 0,
+    },
+  },
+});
 
 function App() {
   return (
-    <ViewPortProvider>
-      <GlobalStyles />
-      <BrowserRouter>
-        <Routes>
-          <Route element={<AppLayout />}>
-            <Route index element={<Navigate replace to="/home" />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="/tv" element={<TVSeries />} />
-            <Route path="/bookmarks" element={<Bookmark />} />
-          </Route>
+    <QueryClientProvider client={queryClient}>
+      <ViewPortProvider>
+        <GlobalStyles />
+        <BrowserRouter>
+          <Routes>
+            <Route element={<AppLayout />}>
+              <Route index element={<Navigate replace to="/home" />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/movies" element={<Movies />} />
+              <Route path="/tv" element={<TVSeries />} />
+              <Route path="/bookmarks" element={<Bookmark />} />
+            </Route>
 
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </ViewPortProvider>
+            <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </ViewPortProvider>
+    </QueryClientProvider>
   );
 }
 
