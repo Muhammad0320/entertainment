@@ -10,7 +10,7 @@ import { FormContainer } from "../ui/FormContainer";
 import { useLogin } from "./Auth/useLogin";
 
 function LoginForm() {
-  const { login } = useLogin();
+  const { login, isLoading } = useLogin();
 
   const { register, formState, reset, handleSubmit } = useForm();
 
@@ -18,8 +18,6 @@ function LoginForm() {
 
   const onSubmit = ({ email, password }, e) => {
     e.preventDefault();
-
-    console.log(email, password);
 
     login(
       { email, password },
@@ -38,6 +36,7 @@ function LoginForm() {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <FormRow error={errors?.email?.message}>
           <Input
+            disabled={isLoading}
             placeholder="Email address"
             variation="auth"
             {...register("email", {
@@ -52,6 +51,7 @@ function LoginForm() {
 
         <FormRow error={errors?.password?.message}>
           <Input
+            disabled={isLoading}
             placeholder="••••••••"
             variation="auth"
             type="password"
@@ -65,7 +65,10 @@ function LoginForm() {
           />
         </FormRow>
 
-        <Button variation="auth"> Login to your account </Button>
+        <Button disabled={isLoading} variation="auth">
+          {" "}
+          {isLoading ? "Logging you in..." : "Login to your account"}{" "}
+        </Button>
 
         <AlternativeAuthentication method="Signup" />
       </Form>
