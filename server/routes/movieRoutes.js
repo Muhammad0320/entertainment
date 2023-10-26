@@ -18,7 +18,7 @@ const router = express.Router();
 
 router.route("/:id").get(getMovie);
 
-router.route("/id").get(getMovies);
+router.route("/").get(getMovies);
 
 router.use(verifyToken, protect);
 

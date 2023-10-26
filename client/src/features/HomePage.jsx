@@ -9,12 +9,17 @@ import { useState } from "react";
 import data from "../ui/Test";
 import styled from "styled-components";
 import { clampBuilder } from "../Styles/clampBuilder";
+import { useGetMovies } from "./movies/useGetMovies";
 
 const ContainerHomePage = styled.div`
   margin-block-start: ${() => clampBuilder(350, 1200, 3, 4.5)};
 `;
 
 function HomePage() {
+  const { allMovies = [] } = useGetMovies();
+
+  console.log(allMovies);
+
   const [searchQuery, setSearchQuery] = useState("");
 
   const movieData = searchQuery
