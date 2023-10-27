@@ -5,11 +5,10 @@ import { clampBuilder } from "../Styles/clampBuilder";
 
 const StyledApp = styled.div`
   min-height: 100dvh;
-  /* padding: 3rem; */
+
   padding-inline-end: 0;
   display: grid;
 
-  /* @media (max-width: 950px) { */
   grid-template-columns: none;
 
   row-gap: ${() => clampBuilder(350, 950, 1.5, 3)};
@@ -19,7 +18,6 @@ const StyledApp = styled.div`
   padding-block: ${() => clampBuilder(350, 1200, 1, 2)};
 
   grid-template-rows: 5rem 1fr;
-  /* } */
 
   @media (max-width: 500px) {
     padding: 0;
@@ -31,10 +29,6 @@ const StyledMain = styled.main`
   grid-column: 2 / -1;
   grid-row: 2 / -1;
   overflow: auto;
-
-  /* @media (max-width: 950px) {
-    padding: 0;
-  } */
 `;
 
 function AppLayout() {
