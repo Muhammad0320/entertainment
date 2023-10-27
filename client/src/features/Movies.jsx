@@ -11,13 +11,11 @@ function Movie() {
 
   const [searchQuery, setSearchQuery] = useState("");
 
-  const movies = data.filter((data) => data.category === "Movie");
-
   const filteredMovie = searchQuery
-    ? movies.filter((movie) =>
+    ? movieCategory?.filter((movie) =>
         movie.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
-    : movies;
+    : movieCategory;
 
   return (
     <>
@@ -35,7 +33,7 @@ function Movie() {
       </Heading>
 
       <StyledList layout="repeat(auto-fit, minmax(25rem, 1fr))">
-        {movieCategory.map((bookmark) => (
+        {filteredMovie.map((bookmark) => (
           <GridItem data={bookmark} key={bookmark.title} />
         ))}
       </StyledList>
