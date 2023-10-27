@@ -176,7 +176,7 @@ function GridItem({ trend, data }) {
   const {
     title,
     category,
-
+    _id,
     rating,
     year,
     thumbnail: { regular, trending = "" },
@@ -184,11 +184,11 @@ function GridItem({ trend, data }) {
 
   const { bookmark } = useBookmark();
 
-  // console.log(bookmark);
+  const isBookmark = bookmark.map((mark) => mark.movie).includes(_id);
 
   const CategoryIcon = category === "Movie" ? MovieIcon : TvIcon;
 
-  const isBookmark = false;
+  // const isBookmark = false;
 
   const BookmarkIcon = isBookmark ? BookmarkFull : BookmarkEmpty;
 
