@@ -1,9 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { useBookmarks } from "../features/bookmark/useBookmarks";
 
 const BookmarkContext = createContext();
 
-function BookmarkProvider({ children }) {
+export function BookmarkProvider({ children }) {
   const { myBookmarks = [] } = useBookmarks();
 
   const [bookmark, setBookmark] = useState(myBookmarks);
@@ -23,4 +23,11 @@ function BookmarkProvider({ children }) {
   );
 }
 
-export default BookmarkProvider;
+export const useBookmark = () => {
+  const context = useContext(BookmarkContext);
+
+  if (!context)
+    throw new Error("Bookmark context was used outside bookmark provider");
+
+  return context;
+};
