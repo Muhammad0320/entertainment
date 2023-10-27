@@ -6,21 +6,13 @@ import { useBookmark } from "../contexts/bookmarks";
 import { useGetMovies } from "./movies/useGetMovies";
 
 function BookMark() {
-  const { allMovies } = useGetMovies();
-
-  const bookmarked = data.filter((data) => data.isBookmarked === true);
-
   const { bookmark } = useBookmark();
 
-  const bookmarkedMovieList = allMovies.filter((movie) => bookmark.includes());
-
-  const bookmarkedTvSeries = bookmarked.filter(
+  const bookmarkedTvSeries = bookmark.filter(
     (data) => data.category !== "Movie"
   );
 
-  const bookmarkedMovies = bookmarked.filter(
-    (data) => data.category === "Movie"
-  );
+  const bookmarkedMovies = bookmark.filter((data) => data.category === "Movie");
 
   return (
     <>

@@ -7,8 +7,10 @@ export function BookmarkProvider({ children }) {
   const { myBookmarks = [] } = useBookmarks();
   const [bookmark, setBookmark] = useState([]);
 
+  //   console.log(myBookmarks);
+
   useEffect(() => {
-    if (bookmark) {
+    if (bookmark.length) {
       setBookmark(myBookmarks);
     }
   }, []);
