@@ -7,24 +7,21 @@ export function BookmarkProvider({ children }) {
   const { myBookmarks = [] } = useBookmarks();
   const [bookmark, setBookmark] = useState([]);
 
-  //   console.log(myBookmarks);
+  console.log(myBookmarks);
 
   useEffect(() => {
-    if (bookmark.length) {
+    if (myBookmarks.length) {
+      console.log("okay");
       setBookmark(myBookmarks);
     }
   }, []);
 
   const addBookmark = (movie) => {
     setBookmark((bookmark) => [...bookmark, movie]);
-
-    console.log(movie, "add");
   };
 
   const removeBookmark = (id) => {
     setBookmark((bookmark) => bookmark.filter((el) => el.movie._id !== id));
-
-    console.log(id, "clicked");
   };
 
   return (
