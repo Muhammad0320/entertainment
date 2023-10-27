@@ -27,7 +27,9 @@ exports.createBookmarkOnMovie = catchAsync(async (req, res, next) => {
 });
 
 exports.getMyBookmarks = catchAsync(async (req, res, next) => {
-  const myBookmarks = await Bookmark.find({ user: req.user._id });
+  const myBookmarks = await Bookmark.find({ user: req.user._id }).populate(
+    "movie"
+  );
 
   res.status(200).json({
     status: "success",
