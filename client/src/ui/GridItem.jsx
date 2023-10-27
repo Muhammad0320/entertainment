@@ -184,11 +184,11 @@ function GridItem({ trend, data }) {
 
   const { bookmark, addBookmark, removeBookmark } = useBookmark();
 
-  console.log(bookmark);
-
   const currentMovie = {
-    movie: _id,
+    movie: { ...data },
   };
+
+  console.log(bookmark?.map((mark) => mark.movie._id));
 
   const isBookmark = bookmark?.map((mark) => mark.movie._id).includes(_id);
 
@@ -200,7 +200,7 @@ function GridItem({ trend, data }) {
 
   const toggleBookmark = () => {
     if (isBookmark) {
-      removeBookmark(currentMovie);
+      removeBookmark(_id);
     } else {
       addBookmark(currentMovie);
     }

@@ -2,9 +2,17 @@ import GridItem from "../ui/GridItem";
 import { StyledList } from "../ui/StyledList";
 import Heading from "../ui/Heading";
 import data from "../ui/Test";
+import { useBookmark } from "../contexts/bookmarks";
+import { useGetMovies } from "./movies/useGetMovies";
 
 function BookMark() {
+  const { allMovies } = useGetMovies();
+
   const bookmarked = data.filter((data) => data.isBookmarked === true);
+
+  const { bookmark } = useBookmark();
+
+  const bookmarkedMovieList = allMovies.filter((movie) => bookmark.includes());
 
   const bookmarkedTvSeries = bookmarked.filter(
     (data) => data.category !== "Movie"

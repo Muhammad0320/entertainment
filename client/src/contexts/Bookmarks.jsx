@@ -15,12 +15,14 @@ export function BookmarkProvider({ children }) {
 
   const addBookmark = (movie) => {
     setBookmark((bookmark) => [...bookmark, movie]);
+
+    console.log(movie, "add");
   };
 
-  const removeBookmark = (movie) => {
-    setBookmark((bookmark) =>
-      bookmark.filter((el) => el.movie._id !== movie.movie)
-    );
+  const removeBookmark = (id) => {
+    setBookmark((bookmark) => bookmark.filter((el) => el.movie._id !== id));
+
+    console.log(id, "clicked");
   };
 
   return (
