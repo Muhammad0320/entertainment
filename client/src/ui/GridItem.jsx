@@ -97,15 +97,12 @@ const Icon = styled.p`
   cursor: pointer;
   transition: stroke 0.3s;
 
-  visibility: hidden;
-
   &:hover {
     background-image: linear-gradient(
       rgba(255, 255, 255, 0.7),
       rgba(255, 255, 255, 0.7)
     );
     stroke: var(--color-primary);
-    visibility: visible;
   }
 `;
 
@@ -186,7 +183,9 @@ function GridItem({ trend, data }) {
 
   const CategoryIcon = category === "Movie" ? MovieIcon : TvIcon;
 
-  // const BookmarkIcon = isBookmarked ? BookmarkFull : BookmarkEmpty;
+  const isBookmark = false;
+
+  const BookmarkIcon = isBookmark ? BookmarkFull : BookmarkEmpty;
 
   const src = trend ? trending : regular;
 
@@ -200,7 +199,9 @@ function GridItem({ trend, data }) {
         </FigCaption>
       </Figure>
 
-      <Icon>{/* <SVG src={BookmarkIcon} /> */}</Icon>
+      <Icon>
+        <SVG src={BookmarkIcon} />
+      </Icon>
 
       <MovieInfo trend={trend}>
         <MovieDetails trend={trend}>
