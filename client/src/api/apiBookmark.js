@@ -20,10 +20,6 @@ export const createBookmarkApi = async ({ movieId }) => {
     withCredentials: true,
   });
 
-  console.log(movieId);
-
-  console.log(res.data);
-
   return res.data;
 };
 
@@ -32,11 +28,9 @@ export const deleteBookmarkApi = async ({ movieId }) => {
 
   const res = await axios({
     method: "DELETE",
-    url: `${BASE_URL}/delete-bookmark/${movieId}`,
+    url: `${BASE_URL}/bookmarks/delete-bookmark/${movieId}`,
     withCredentials: true,
   });
-
-  console.log(res.data);
 
   return res.data;
 };

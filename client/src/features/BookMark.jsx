@@ -28,7 +28,7 @@ function BookMark() {
   const bookmarkedMovies = bookmarked.filter(
     (data) => data.category === "Movie"
   );
-  console.log(bookmark.length);
+
   if (!bookmark.length) {
     return (
       <Empty>

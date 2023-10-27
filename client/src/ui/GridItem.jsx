@@ -11,6 +11,7 @@ import {
 import { clampBuilder } from "../Styles/clampBuilder";
 import { useBookmark } from "../contexts/bookmarks";
 import { useCreateBookmark } from "../features/bookmark/useCreateBookmark";
+import { useDeleteBookmark } from "../features/bookmark/useDeleteBookmark";
 
 const StyledList = styled.li`
   display: grid;
@@ -176,6 +177,8 @@ const CantegoryIconContainer = styled.p`
 function GridItem({ trend, data }) {
   const { addMovieToBookmark } = useCreateBookmark();
 
+  const { deleteBookmark } = useDeleteBookmark();
+
   const {
     title,
     category,
@@ -200,6 +203,7 @@ function GridItem({ trend, data }) {
   const toggleBookmark = () => {
     if (isBookmark) {
       removeBookmark(_id);
+      deleteBookmark({ movieId: _id });
     } else {
       addBookmark(currentMovie);
       addMovieToBookmark({ movieId: _id });
