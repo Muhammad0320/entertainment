@@ -1,6 +1,8 @@
 class ApiFeatures {
   constructor(query, queryString) {
-    (this.query = query), (this.queryString = queryString);
+    this.query = query;
+
+    this.queryString = queryString;
   }
 
   filter() {
@@ -8,13 +10,13 @@ class ApiFeatures {
 
     const excludedQuery = ["sort", "limit", "page", "field"];
 
-    excludedQuery.forEach((el) => delete queryObject[el]);
+    excludedQuery.forEach(el => delete queryObject[el]);
 
     // Advanced filtering
 
     let queryStr = JSON.stringify(queryObject).replace(
-      /\b(lt|lte|gt|gte)\b/g,
-      (match) => `$${match}`
+      /\b(lt|lte|gt|gte|ne)\b/g,
+      match => `$${match}`
     );
 
     queryStr = JSON.parse(queryStr);

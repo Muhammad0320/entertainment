@@ -4,8 +4,11 @@ import { StyledList } from "../ui/StyledList";
 import Header from "../ui/Header";
 import Heading from "../ui/Heading";
 import data from "../ui/Test";
+import { useGetMoviesByCategory } from "./movies/useGetMoviesByCategory";
 
 function Movie() {
+  const { movieCategory = [] } = useGetMoviesByCategory("Movie");
+
   const [searchQuery, setSearchQuery] = useState("");
 
   const movies = data.filter((data) => data.category === "Movie");
@@ -32,7 +35,7 @@ function Movie() {
       </Heading>
 
       <StyledList layout="repeat(auto-fit, minmax(25rem, 1fr))">
-        {filteredMovie.map((bookmark) => (
+        {movieCategory.map((bookmark) => (
           <GridItem data={bookmark} key={bookmark.title} />
         ))}
       </StyledList>
