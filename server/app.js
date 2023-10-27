@@ -54,14 +54,14 @@ app.use(
   })
 );
 
-app.use(
-  "/api",
-  rateLimit({
-    max: 100,
-    windowMs: 60 * 60 * 1000,
-    message: "Too many requests from this IP"
-  })
-);
+// app.use(
+//   "/api",
+//   rateLimit({
+//     max: 100,
+//     windowMs: 60 * 60 * 1000,
+//     message: "Too many requests from this IP"
+//   })
+// );
 
 app.use(helmet());
 

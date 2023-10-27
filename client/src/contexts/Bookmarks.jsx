@@ -1,12 +1,17 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useBookmarks } from "../features/bookmark/useBookmarks";
 
 const BookmarkContext = createContext();
 
 export function BookmarkProvider({ children }) {
   const { myBookmarks = [] } = useBookmarks();
+  const [bookmark, setBookmark] = useState([]);
 
-  const [bookmark, setBookmark] = useState(myBookmarks);
+  useEffect(() => {
+    setBookmark(myBookmarks);
+  }, []);
+
+  console.log(bookmark);
 
   const addBookmark = (movie) => {
     setBookmark((bookmark) => [...bookmark, movie]);

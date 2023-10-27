@@ -9,6 +9,7 @@ import {
   BookmarkEmpty,
 } from "../icons/icons";
 import { clampBuilder } from "../Styles/clampBuilder";
+import { useBookmark } from "../contexts/bookmarks";
 
 const StyledList = styled.li`
   display: grid;
@@ -180,6 +181,10 @@ function GridItem({ trend, data }) {
     year,
     thumbnail: { regular, trending = "" },
   } = data;
+
+  const { bookmark } = useBookmark();
+
+  // console.log(bookmark);
 
   const CategoryIcon = category === "Movie" ? MovieIcon : TvIcon;
 
