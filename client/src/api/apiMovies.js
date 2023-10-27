@@ -15,11 +15,11 @@ export const getTrendingMovies = async () => {
 
 export const getMoviesByCategories = async (category) => {
   const url =
-    category !== "Movie"
-      ? `${BASE_URL}/movies?category[ne]=Movie`
-      : `${BASE_URL}/movies?category=${category}`;
+    category === "Movie"
+      ? `${BASE_URL}/movies?category=${category}`
+      : `${BASE_URL}/movies?category[ne]=Movie`;
 
   const res = await axios.get(url);
 
-  return res.data.data.document;
+  return res.data?.data?.document;
 };

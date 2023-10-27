@@ -4,8 +4,11 @@ import { StyledList } from "../ui/StyledList";
 import Heading from "../ui/Heading";
 import data from "../ui/Test";
 import Header from "../ui/Header";
+import { useGetMoviesByCategory } from "./movies/useGetMoviesByCategory";
 
 function TvSeries() {
+  const { movieCategory = [] } = useGetMoviesByCategory("Tv");
+
   const [searchQuery, setSearchQuery] = useState("");
 
   const tv = data.filter((data) => data.category !== "Movie");
@@ -32,7 +35,7 @@ function TvSeries() {
       </Heading>
 
       <StyledList layout="repeat(auto-fit, minmax(25rem, 1fr))">
-        {filteredTv.map((tv) => (
+        {movieCategory.map((tv) => (
           <GridItem data={tv} key={tv.title} />
         ))}
       </StyledList>
