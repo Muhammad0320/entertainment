@@ -8,19 +8,18 @@ const StyledApp = styled.div`
   /* padding: 3rem; */
   padding-inline-end: 0;
   display: grid;
-  grid-template-columns: 10rem 1fr;
 
-  @media (max-width: 950px) {
-    grid-template-columns: none;
+  /* @media (max-width: 950px) { */
+  grid-template-columns: none;
 
-    row-gap: ${() => clampBuilder(350, 950, 1.5, 3)};
+  row-gap: ${() => clampBuilder(350, 950, 1.5, 3)};
 
-    padding-inline: ${() => clampBuilder(350, 950, 1.5, 2.5)};
+  padding-inline: ${() => clampBuilder(350, 950, 1.5, 2.5)};
 
-    padding-block: ${() => clampBuilder(350, 1200, 1, 2)};
+  padding-block: ${() => clampBuilder(350, 1200, 1, 2)};
 
-    grid-template-rows: 5rem 1fr;
-  }
+  grid-template-rows: 5rem 1fr;
+  /* } */
 
   @media (max-width: 500px) {
     padding: 0;

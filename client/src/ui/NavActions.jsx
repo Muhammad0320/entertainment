@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { clampBuilder } from "../Styles/clampBuilder";
 import { useGetMe } from "../features/user/useGetMe";
 
