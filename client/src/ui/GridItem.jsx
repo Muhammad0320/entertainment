@@ -190,7 +190,9 @@ function GridItem({ trend, data }) {
     movie: _id,
   };
 
-  const isBookmark = bookmark?.map((mark) => mark.movie).includes(_id);
+  const isBookmark = bookmark?.map((mark) => mark.movie._id).includes(_id);
+
+  console.log(isBookmark);
 
   const CategoryIcon = category === "Movie" ? MovieIcon : TvIcon;
 

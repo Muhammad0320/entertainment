@@ -19,7 +19,7 @@ export function BookmarkProvider({ children }) {
 
   const removeBookmark = (movie) => {
     setBookmark((bookmark) =>
-      bookmark.filter((el) => el.movie !== movie.movie)
+      bookmark.filter((el) => el.movie._id !== movie.movie)
     );
   };
 

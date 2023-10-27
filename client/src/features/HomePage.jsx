@@ -11,6 +11,7 @@ import styled from "styled-components";
 import { clampBuilder } from "../Styles/clampBuilder";
 import { useGetMovies } from "./movies/useGetMovies";
 import { useGetMe } from "./user/useGetMe";
+import { useBookmark } from "../contexts/bookmarks";
 
 const ContainerHomePage = styled.div`
   margin-block-start: ${() => clampBuilder(350, 1200, 3, 4.5)};
