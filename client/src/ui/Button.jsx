@@ -6,7 +6,7 @@ const Button = styled.button`
 
   color: var(--color-white);
 
-  font-size: ${() => clampBuilder(350, 1200, 1.2, 1.7)};
+  font-size: ${() => clampBuilder(350, 1200, 1, 1.7)};
 
   text-align: center;
 
@@ -20,17 +20,50 @@ const Button = styled.button`
 
   transition: all 0.2s;
 
+  &:hover {
+    color: var(--color-blue-dark);
+
+    background-color: var(--color-white);
+  }
+
   ${(props) =>
     props.variation === "auth" &&
     css`
       margin-top: 2rem;
     `}
 
-  &:hover {
-    color: var(--color-blue-dark);
+  ${(props) =>
+    props.variation === "signup" &&
+    css`
+      border: 1px solid var(--color-white);
 
-    background-color: var(--color-white);
-  }
+      background-color: transparent;
+
+      &:hover {
+        border: none;
+        background-color: var(--color-white);
+
+        color: var(--color-primary);
+      }
+    `}
+
+    ${(props) =>
+    props.variation === "login" &&
+    css`
+      color: var(--color-white);
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    `}
+
+    ${(props) =>
+    props.size === "small" &&
+    css`
+      padding: 1rem 1.3rem;
+
+      font-size: ${() => clampBuilder(350, 1200, 0.8, 1.2)};
+    `}
 `;
 
 export default Button;
