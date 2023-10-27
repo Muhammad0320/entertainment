@@ -10,6 +10,7 @@ import data from "../ui/Test";
 import styled from "styled-components";
 import { clampBuilder } from "../Styles/clampBuilder";
 import { useGetMovies } from "./movies/useGetMovies";
+import { useGetTrendingMovies } from "./movies/useGetTrendingMovies";
 
 const ContainerHomePage = styled.div`
   margin-block-start: ${() => clampBuilder(350, 1200, 3, 4.5)};
@@ -18,7 +19,9 @@ const ContainerHomePage = styled.div`
 function HomePage() {
   const { allMovies = [] } = useGetMovies();
 
-  console.log(allMovies);
+  const { trendingMovies = [] } = useGetTrendingMovies();
+
+  console.log(trendingMovies);
 
   const [searchQuery, setSearchQuery] = useState("");
 

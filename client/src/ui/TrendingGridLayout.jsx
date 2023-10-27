@@ -4,12 +4,13 @@ import Heading from "./Heading";
 import data from "./Test";
 import styled from "styled-components";
 import { clampBuilder } from "../Styles/clampBuilder";
+import { useGetTrendingMovies } from "../features/movies/useGetTrendingMovies";
 
 const TrendingContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
 
-  grid-auto-columns: 47%;
+  grid-auto-columns: 45%;
 
   overflow-x: auto;
 
@@ -27,13 +28,15 @@ const TrendingContainer = styled.div`
 `;
 
 function TrendingGridLayout() {
-  const trend = data.filter((data) => data.isTrending);
+  const { trendingMovies = [] } = useGetTrendingMovies();
+
+  // const trend = data.filter((data) => data.isTrending);
 
   return (
     <>
       <Heading> Trending </Heading>
       <TrendingContainer>
-        {trend.map((item) => (
+        {trendingMovies.map((item) => (
           <GridItem trend="trend" data={item} key={item.title} />
         ))}
       </TrendingContainer>

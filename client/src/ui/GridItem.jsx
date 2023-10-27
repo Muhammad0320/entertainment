@@ -181,17 +181,19 @@ function GridItem({ trend, data }) {
 
     rating,
     year,
-    thumbnail: { regular },
+    thumbnail: { regular, trending = "" },
   } = data;
 
   const CategoryIcon = category === "Movie" ? MovieIcon : TvIcon;
 
   // const BookmarkIcon = isBookmarked ? BookmarkFull : BookmarkEmpty;
 
+  const src = trend ? trending : regular;
+
   return (
     <StyledList trend={trend}>
       <Figure>
-        <Image src={regular} alt="Image of movie" trend={trend} />
+        <Image src={src} alt="Image of movie" trend={trend} />
         <FigCaption>
           <SVG src={PlayIcon} />
           <span> play </span>
