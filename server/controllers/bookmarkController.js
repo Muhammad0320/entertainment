@@ -41,15 +41,15 @@ exports.getMyBookmarks = catchAsync(async (req, res, next) => {
 });
 
 exports.deleteBookmarkByMovie = catchAsync(async (req, res, next) => {
-  const { movieId } = req.body;
+  const { movieId } = req.params;
 
   if (!movieId)
-    return new AppError("Please provide the movie id to be deleted", 400);
+    return next(new AppError("Please provide the movie id to be deleted", 400));
 
   const toBeDeletedBookmark = await Bookmark.deleteOne({ movie: movieId });
 
   if (!toBeDeletedBookmark)
-    return new AppError("There is no movie with such Id");
+    return next(new AppError("There is no movie with such Id"));
 
   res.status(204).json({
     status: "success"
