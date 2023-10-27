@@ -14,7 +14,12 @@ export const getTrendingMovies = async () => {
 };
 
 export const getMoviesByCategories = async (category) => {
-  const res = await axios.get(`${BASE_URL}/movies?category=${category}`);
+  const url =
+    category !== "Movie"
+      ? `${BASE_URL}/movies?category[ne]=Movie`
+      : `${BASE_URL}/movies?category=${category}`;
+
+  const res = await axios.get(url);
 
   return res.data.data.document;
 };
