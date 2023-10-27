@@ -3,12 +3,24 @@ import { useBookmarks } from "../features/bookmark/useBookmarks";
 
 const BookmarkContext = createContext();
 
-function BookmarkPrivider() {
+function BookmarkProvider({ children }) {
   const { myBookmarks = [] } = useBookmarks();
 
   const [bookmark, setBookmark] = useState(myBookmarks);
 
-  return <BookmarkContext.Provider></BookmarkContext.Provider>;
+  const addBookmark = (movie) => {
+    setBookmark((bookmark) => [...bookmark, movie]);
+  };
+
+  const removeBookmark = (movie) => {
+    setBookmark((bookmark) => bookmark.filter((el) => el.id !== movie.id));
+  };
+
+  return (
+    <BookmarkContext.Provider value={{ addBookmark, removeBookmark, bookmark }}>
+      {children}
+    </BookmarkContext.Provider>
+  );
 }
 
-export default BookmarkPrivider;
+export default BookmarkProvider;
