@@ -9,9 +9,7 @@ export function BookmarkProvider({ children }) {
 
   useEffect(() => {
     setBookmark(myBookmarks);
-  }, []);
-
-  console.log(bookmark);
+  }, [myBookmarks]);
 
   const addBookmark = (movie) => {
     setBookmark((bookmark) => [...bookmark, movie]);
