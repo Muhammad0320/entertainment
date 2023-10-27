@@ -1,9 +1,12 @@
 import { createContext, useState } from "react";
+import { useBookmarks } from "../features/bookmark/useBookmarks";
 
 const BookmarkContext = createContext();
 
 function BookmarkPrivider() {
-  const [bookmark, setBookmark] = useState([]);
+  const { myBookmarks = [] } = useBookmarks();
+
+  const [bookmark, setBookmark] = useState(myBookmarks);
 
   return <BookmarkContext.Provider></BookmarkContext.Provider>;
 }

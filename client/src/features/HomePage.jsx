@@ -21,7 +21,7 @@ function HomePage() {
 
   const { me = {} } = useGetMe();
 
-  const firstName = me.name.split(" ")[0];
+  const firstName = me?.name?.split(" ")[0];
 
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -33,7 +33,7 @@ function HomePage() {
 
   return (
     <>
-      <div> Welcome back, {firstName} </div>
+      {me && <div> Welcome back, {firstName} </div>}
 
       <Header
         placeholder="Search for movies or TV series"
