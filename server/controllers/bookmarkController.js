@@ -1,4 +1,5 @@
 const Bookmark = require("../model/bookmarkModel");
+const AppError = require("../utils/AppError");
 const catchAsync = require("../utils/catchAsync");
 const {
   createOne,
@@ -36,6 +37,22 @@ exports.getMyBookmarks = catchAsync(async (req, res, next) => {
     data: {
       bookmarks: myBookmarks
     }
+  });
+});
+
+exports.deleteBookmarkByMovie = catchAsync(async (req, res, next) => {
+  const { movieId } = req.body;
+
+  if (!movieId)
+    return new AppError("Please provide the movie id to be deleted", 400);
+
+  const toBeDeletedBookmark = await Bookmark.deleteOne({ movie: movieId });
+
+  if (!toBeDeletedBookmark)
+    return new AppError("There is no movie with such Id");
+
+  res.status(204).json({
+    status: "success"
   });
 });
 

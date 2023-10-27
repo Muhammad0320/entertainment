@@ -31,7 +31,7 @@ export const deleteBookmarkApi = async ({ bookmarkId }) => {
   if (!bookmarkId) return;
 
   const res = await axios({
-    method: "POST",
+    method: "DELETE",
     url: `${BASE_URL}/bookmarks/${bookmarkId}`,
     withCredentials: true,
   });

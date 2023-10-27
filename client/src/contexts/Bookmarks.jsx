@@ -5,8 +5,6 @@ import { useCreateBookmark } from "../features/bookmark/useCreateBookmark";
 const BookmarkContext = createContext();
 
 export function BookmarkProvider({ children }) {
-  const { addMovieToBookmark } = useCreateBookmark();
-
   const { myBookmarks = [] } = useBookmarks();
   const [bookmark, setBookmark] = useState([]);
 
@@ -20,8 +18,6 @@ export function BookmarkProvider({ children }) {
 
   const addBookmark = (movie) => {
     setBookmark((bookmark) => [...bookmark, movie]);
-
-    addMovieToBookmark({ movieId: movie._id });
   };
 
   const removeBookmark = (id) => {
