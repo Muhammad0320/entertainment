@@ -3,7 +3,7 @@ import GridItem from "../ui/GridItem";
 import { StyledList } from "../ui/StyledList";
 import Header from "../ui/Header";
 import Heading from "../ui/Heading";
-import data from "../ui/Test";
+
 import { useGetMoviesByCategory } from "./movies/useGetMoviesByCategory";
 
 function Movie() {

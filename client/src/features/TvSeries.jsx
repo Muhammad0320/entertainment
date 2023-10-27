@@ -2,7 +2,7 @@ import { useState } from "react";
 import GridItem from "../ui/GridItem";
 import { StyledList } from "../ui/StyledList";
 import Heading from "../ui/Heading";
-import data from "../ui/Test";
+
 import Header from "../ui/Header";
 import { useGetMoviesByCategory } from "./movies/useGetMoviesByCategory";
 
@@ -11,13 +11,11 @@ function TvSeries() {
 
   const [searchQuery, setSearchQuery] = useState("");
 
-  const tv = data.filter((data) => data.category !== "Movie");
-
   const filteredTv = searchQuery
-    ? tv.filter((movie) =>
+    ? movieCategory.filter((movie) =>
         movie.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
-    : tv;
+    : movieCategory;
 
   return (
     <>
@@ -35,7 +33,7 @@ function TvSeries() {
       </Heading>
 
       <StyledList layout="repeat(auto-fit, minmax(25rem, 1fr))">
-        {movieCategory.map((tv) => (
+        {filteredTv.map((tv) => (
           <GridItem data={tv} key={tv.title} />
         ))}
       </StyledList>

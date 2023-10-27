@@ -6,11 +6,10 @@ import Header from "../ui/Header";
 
 import TrendingGridLayout from "../ui/TrendingGridLayout";
 import { useState } from "react";
-import data from "../ui/Test";
+
 import styled from "styled-components";
 import { clampBuilder } from "../Styles/clampBuilder";
 import { useGetMovies } from "./movies/useGetMovies";
-import { useGetTrendingMovies } from "./movies/useGetTrendingMovies";
 
 const ContainerHomePage = styled.div`
   margin-block-start: ${() => clampBuilder(350, 1200, 3, 4.5)};
@@ -19,17 +18,13 @@ const ContainerHomePage = styled.div`
 function HomePage() {
   const { allMovies = [] } = useGetMovies();
 
-  const { trendingMovies = [] } = useGetTrendingMovies();
-
-  console.log(trendingMovies);
-
   const [searchQuery, setSearchQuery] = useState("");
 
   const movieData = searchQuery
-    ? data.filter((item) =>
+    ? allMovies.filter((item) =>
         item.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
-    : data;
+    : allMovies;
 
   return (
     <>
@@ -51,7 +46,7 @@ function HomePage() {
       </ContainerHomePage>
 
       <StyledList layout="repeat(auto-fill, minmax(25rem, 1fr))">
-        {allMovies.map((item) => (
+        {movieData.map((item) => (
           <GridItem data={item} key={item.title} />
         ))}
       </StyledList>
