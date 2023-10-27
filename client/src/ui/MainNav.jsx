@@ -11,16 +11,12 @@ import {
 import { clampBuilder } from "../Styles/clampBuilder";
 
 const NavList = styled.ul`
-  margin-top: ${() => clampBuilder(950, 1200, 5, 7)};
   display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
-  @media (max-width: 950px) {
-    margin-top: 0;
-    flex-direction: row;
-    align-items: center;
-    column-gap: ${() => clampBuilder(350, 1200, 3, 4)};
-  }
+
+  margin-top: 0;
+  flex-direction: row;
+  align-items: center;
+  column-gap: ${() => clampBuilder(350, 1200, 3, 4)};
 `;
 
 const StyledNavLink = styled(NavLink)`

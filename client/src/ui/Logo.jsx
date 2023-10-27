@@ -8,11 +8,7 @@ import { IconLogo } from "../icons/icons";
 const StyledLogo = styled.div`
   position: relative;
 
-  margin-bottom: 5rem;
-
-  @media (max-width: 950px) {
-    margin-bottom: 0;
-  }
+  margin-bottom: 0;
 `;
 
 function Logo() {
