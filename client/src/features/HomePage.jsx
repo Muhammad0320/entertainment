@@ -11,10 +11,13 @@ import styled from "styled-components";
 import { clampBuilder } from "../Styles/clampBuilder";
 import { useGetMovies } from "./movies/useGetMovies";
 import { useGetMe } from "./user/useGetMe";
-import { useBookmark } from "../contexts/bookmarks";
 
 const ContainerHomePage = styled.div`
   margin-block-start: ${() => clampBuilder(350, 1200, 3, 4.5)};
+`;
+
+const Welcome = styled.span`
+  font-size: ${() => clampBuilder(320, 1200, 1.5, 2.5)};
 `;
 
 function HomePage() {
@@ -34,7 +37,7 @@ function HomePage() {
 
   return (
     <>
-      {me && <div> Welcome back, {firstName} </div>}
+      {me && <Welcome> Welcome back, {firstName} </Welcome>}
 
       <Header
         placeholder="Search for movies or TV series"

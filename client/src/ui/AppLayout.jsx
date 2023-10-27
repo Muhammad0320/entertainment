@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
-import Sidebar from "./Sidebar";
+
 import { Outlet } from "react-router-dom";
 import { clampBuilder } from "../Styles/clampBuilder";
+import NavBar from "./Navbar";
 
 const StyledApp = styled.div`
   min-height: 100dvh;
@@ -34,7 +35,7 @@ const StyledMain = styled.main`
 function AppLayout() {
   return (
     <StyledApp>
-      <Sidebar />
+      <NavBar />
       <StyledMain>
         <Outlet />
       </StyledMain>
