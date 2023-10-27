@@ -81,7 +81,7 @@ const FigCaption = styled.figcaption`
   transition: visibility 0.2s ease, scale 0.24s;
 `;
 
-const Icon = styled.p`
+const Icon = styled.span`
   grid-column: 2 / -1;
   grid-row: 1 / 2;
   padding: ${() => clampBuilder(350, 1200, 1, 1.6)};
@@ -182,7 +182,11 @@ function GridItem({ trend, data }) {
     thumbnail: { regular, trending = "" },
   } = data;
 
-  const { bookmark } = useBookmark();
+  const { bookmark, addBookmark } = useBookmark();
+
+  const currentMovie = {
+    movie: _id,
+  };
 
   const isBookmark = bookmark.map((mark) => mark.movie).includes(_id);
 
@@ -204,7 +208,7 @@ function GridItem({ trend, data }) {
         </FigCaption>
       </Figure>
 
-      <Icon>
+      <Icon onClick={() => addBookmark(currentMovie)}>
         <SVG src={BookmarkIcon} />
       </Icon>
 

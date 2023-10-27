@@ -16,7 +16,7 @@ export function BookmarkProvider({ children }) {
   };
 
   const removeBookmark = (movie) => {
-    setBookmark((bookmark) => bookmark.filter((el) => el.id !== movie.id));
+    setBookmark((bookmark) => bookmark.filter((el) => el.movie !== movie.id));
   };
 
   return (
