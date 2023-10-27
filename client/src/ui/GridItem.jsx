@@ -182,17 +182,27 @@ function GridItem({ trend, data }) {
     thumbnail: { regular, trending = "" },
   } = data;
 
-  const { bookmark, addBookmark } = useBookmark();
+  const { bookmark, addBookmark, removeBookmark } = useBookmark();
+
+  console.log(bookmark);
 
   const currentMovie = {
     movie: _id,
   };
 
-  const isBookmark = bookmark.map((mark) => mark.movie).includes(_id);
+  const isBookmark = bookmark?.map((mark) => mark.movie).includes(_id);
 
   const CategoryIcon = category === "Movie" ? MovieIcon : TvIcon;
 
   // const isBookmark = false;
+
+  const toggleBookmark = () => {
+    if (isBookmark) {
+      removeBookmark(currentMovie);
+    } else {
+      addBookmark(currentMovie);
+    }
+  };
 
   const BookmarkIcon = isBookmark ? BookmarkFull : BookmarkEmpty;
 
@@ -208,7 +218,7 @@ function GridItem({ trend, data }) {
         </FigCaption>
       </Figure>
 
-      <Icon onClick={() => addBookmark(currentMovie)}>
+      <Icon onClick={toggleBookmark}>
         <SVG src={BookmarkIcon} />
       </Icon>
 

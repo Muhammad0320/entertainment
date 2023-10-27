@@ -8,15 +8,19 @@ export function BookmarkProvider({ children }) {
   const [bookmark, setBookmark] = useState([]);
 
   useEffect(() => {
-    setBookmark(myBookmarks);
-  }, [myBookmarks]);
+    if (bookmark) {
+      setBookmark(myBookmarks);
+    }
+  }, []);
 
   const addBookmark = (movie) => {
     setBookmark((bookmark) => [...bookmark, movie]);
   };
 
   const removeBookmark = (movie) => {
-    setBookmark((bookmark) => bookmark.filter((el) => el.movie !== movie.id));
+    setBookmark((bookmark) =>
+      bookmark.filter((el) => el.movie !== movie.movie)
+    );
   };
 
   return (
