@@ -15,6 +15,16 @@ export const loginApi = async ({ email, password }) => {
   return res.data;
 };
 
+export const logout = async () => {
+  const res = await axios({
+    method: "POST",
+    url: `${BASE_URL}/users/logout`,
+    withCredentials: true,
+  });
+
+  return res.data;
+};
+
 export const signupApi = async ({ name, email, password, passwordConfirm }) => {
   const res = await axios({
     method: "POST",
