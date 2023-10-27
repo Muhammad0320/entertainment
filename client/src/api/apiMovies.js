@@ -6,3 +6,9 @@ export const getAllMovies = async () => {
 
   return res.data.data.document;
 };
+
+export const getTrendingMovies = async () => {
+  const res = await axios.get(`${BASE_URL}/movies?isTrending=true`);
+
+  return res.data;
+};
