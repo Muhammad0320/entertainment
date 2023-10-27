@@ -12,11 +12,17 @@ export const bookmarkApi = async () => {
 };
 
 export const createBookmarkApi = async ({ movieId }) => {
+  if (!movieId) return;
+
   const res = await axios({
     method: "POST",
-    url: `${BASE_URL}/movies/${movieId}/bookmark`,
+    url: `${BASE_URL}/movies/${movieId}/bookmarks`,
     withCredentials: true,
   });
+
+  console.log(movieId);
+
+  console.log(res.data);
 
   return res.data;
 };

@@ -10,6 +10,7 @@ import {
 } from "../icons/icons";
 import { clampBuilder } from "../Styles/clampBuilder";
 import { useBookmark } from "../contexts/bookmarks";
+import { useCreateBookmark } from "../features/bookmark/useCreateBookmark";
 
 const StyledList = styled.li`
   display: grid;
@@ -173,6 +174,8 @@ const CantegoryIconContainer = styled.p`
 `;
 
 function GridItem({ trend, data }) {
+  const { addMovieToBookmark } = useCreateBookmark();
+
   const {
     title,
     category,
@@ -188,8 +191,6 @@ function GridItem({ trend, data }) {
     movie: { ...data },
   };
 
-  console.log(bookmark.map((bookmark) => bookmark.movie));
-
   const isBookmark = bookmark?.map((mark) => mark.movie._id).includes(_id);
 
   const CategoryIcon = category === "Movie" ? MovieIcon : TvIcon;
@@ -201,6 +202,7 @@ function GridItem({ trend, data }) {
       removeBookmark(_id);
     } else {
       addBookmark(currentMovie);
+      addMovieToBookmark({ movieId: _id });
     }
   };
 
