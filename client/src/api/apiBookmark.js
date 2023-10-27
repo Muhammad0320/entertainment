@@ -11,7 +11,7 @@ export const bookmarkApi = async () => {
   return res.data.data?.bookmarks;
 };
 
-export const createBookmarkApi = async (movieId) => {
+export const createBookmarkApi = async ({ movieId }) => {
   const res = await axios({
     method: "POST",
     url: `${BASE_URL}/movies/${movieId}/bookmark`,

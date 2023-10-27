@@ -1,22 +1,27 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useBookmarks } from "../features/bookmark/useBookmarks";
+import { useCreateBookmark } from "../features/bookmark/useCreateBookmark";
 
 const BookmarkContext = createContext();
 
 export function BookmarkProvider({ children }) {
+  const { addMovieToBookmark } = useCreateBookmark();
+
   const { myBookmarks = [] } = useBookmarks();
   const [bookmark, setBookmark] = useState([]);
 
   useEffect(() => {
     if (myBookmarks.length) {
       console.log(myBookmarks);
-      console.log("okay");
+
       setBookmark(myBookmarks);
     }
-  }, []);
+  }, [myBookmarks]);
 
   const addBookmark = (movie) => {
     setBookmark((bookmark) => [...bookmark, movie]);
+
+    addMovieToBookmark({ movieId: movie._id });
   };
 
   const removeBookmark = (id) => {
