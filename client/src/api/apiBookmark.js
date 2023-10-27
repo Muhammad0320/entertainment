@@ -26,3 +26,17 @@ export const createBookmarkApi = async ({ movieId }) => {
 
   return res.data;
 };
+
+export const deleteBookmarkApi = async ({ bookmarkId }) => {
+  if (!bookmarkId) return;
+
+  const res = await axios({
+    method: "POST",
+    url: `${BASE_URL}/bookmarks/${bookmarkId}`,
+    withCredentials: true,
+  });
+
+  console.log(res.data);
+
+  return res.data;
+};
