@@ -5,6 +5,7 @@ import { useGetMe } from "../features/user/useGetMe";
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import { useLogout } from "../features/Auth/useLogout";
 
 const ActionsContainer = styled.div`
   display: flex;
@@ -35,6 +36,8 @@ const LogoutIcon = styled.span`
 `;
 
 function NavActions() {
+  const { logout } = useLogout();
+
   const { me, isLoading } = useGetMe();
 
   const navigate = useNavigate();
@@ -44,7 +47,7 @@ function NavActions() {
   return (
     <ActionsContainer>
       {me && !isLoading ? (
-        <LogoutIcon>
+        <LogoutIcon onClick={logout}>
           {" "}
           <HiArrowRightOnRectangle />{" "}
         </LogoutIcon>
