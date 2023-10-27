@@ -10,6 +10,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { clampBuilder } from "../Styles/clampBuilder";
 import { useGetMovies } from "./movies/useGetMovies";
+import { useGetMe } from "./user/useGetMe";
 
 const ContainerHomePage = styled.div`
   margin-block-start: ${() => clampBuilder(350, 1200, 3, 4.5)};
@@ -17,6 +18,10 @@ const ContainerHomePage = styled.div`
 
 function HomePage() {
   const { allMovies = [] } = useGetMovies();
+
+  const { me = {} } = useGetMe();
+
+  const firstName = me.name.split(" ")[0];
 
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -28,6 +33,8 @@ function HomePage() {
 
   return (
     <>
+      <div> Welcome back, {firstName} </div>
+
       <Header
         placeholder="Search for movies or TV series"
         value={searchQuery}

@@ -9,6 +9,5 @@ export const getMe = async () => {
     withCredentials: true,
   });
 
-  console.log(res.data);
-  return res.data;
+  return res.data?.user;
 };
