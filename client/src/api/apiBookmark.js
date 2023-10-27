@@ -27,12 +27,12 @@ export const createBookmarkApi = async ({ movieId }) => {
   return res.data;
 };
 
-export const deleteBookmarkApi = async ({ bookmarkId }) => {
-  if (!bookmarkId) return;
+export const deleteBookmarkApi = async ({ movieId }) => {
+  if (!movieId) return;
 
   const res = await axios({
     method: "DELETE",
-    url: `${BASE_URL}/bookmarks/${bookmarkId}`,
+    url: `${BASE_URL}/delete-bookmark/${movieId}`,
     withCredentials: true,
   });
 
