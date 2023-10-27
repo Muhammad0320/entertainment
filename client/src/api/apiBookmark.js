@@ -8,8 +8,6 @@ export const bookmarkApi = async () => {
     withCredentials: true,
   });
 
-  //   console.log(res.data.data?.bookmarks);
-
   return res.data.data?.bookmarks;
 };
 
