@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useBookmarks } from "../features/bookmark/useBookmarks";
-import { useCreateBookmark } from "../features/bookmark/useCreateBookmark";
 
 const BookmarkContext = createContext();
 
