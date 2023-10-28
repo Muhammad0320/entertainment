@@ -1,7 +1,7 @@
 import GridItem from "./GridItem";
 
 import Heading from "./Heading";
-import data from "./Test";
+
 import styled from "styled-components";
 import { clampBuilder } from "../Styles/clampBuilder";
 import { useGetTrendingMovies } from "../features/movies/useGetTrendingMovies";
