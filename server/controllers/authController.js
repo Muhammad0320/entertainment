@@ -30,7 +30,9 @@ const sendJwt = (res, user, status) => {
       Date.now() + process.env.COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
 
-    httpOnly: true
+    httpOnly: true,
+    secure: true,
+    sameSite: "None"
   });
 
   res.status(status).json({
