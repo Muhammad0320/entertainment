@@ -2,8 +2,8 @@ import GridItem from "../ui/GridItem";
 import { StyledList } from "../ui/StyledList";
 import Heading from "../ui/Heading";
 
-import { useBookmark } from "../contexts/bookmarks";
 import styled from "styled-components";
+import { useBookmark } from "../contexts/bookmarks";
 
 const BookMarkContainer = styled.div`
   margin-bottom: 10rem;
