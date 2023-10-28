@@ -40,7 +40,7 @@ const Button = styled.button`
       background-color: transparent;
 
       &:hover {
-        border: none;
+        /* border: none; */
         background-color: var(--color-white);
 
         color: var(--color-primary);
@@ -62,7 +62,7 @@ const Button = styled.button`
     css`
       padding: 1rem 1.3rem;
 
-      font-size: ${() => clampBuilder(350, 1200, 0.8, 1.2)};
+      font-size: ${() => clampBuilder(350, 1200, 0.8, 1.4)};
     `}
 `;
 

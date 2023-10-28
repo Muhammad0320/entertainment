@@ -37,7 +37,7 @@ function HomePage() {
 
   return (
     <>
-      {me && <Welcome> Welcome back, {firstName} </Welcome>}
+      {firstName && <Welcome> Welcome back, {firstName} </Welcome>}
 
       <Header
         placeholder="Search for movies or TV series"
