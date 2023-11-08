@@ -7,7 +7,7 @@ import NavActions from "./NavActions";
 
 const StyledNavBar = styled.aside`
   text-align: center;
-
+  
   border-radius: ${() => clampBuilder(950, 1200, 1, 2)};
 
   background-color: var(--color-blue-dark);

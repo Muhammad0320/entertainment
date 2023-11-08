@@ -34,7 +34,7 @@ function HomePage() {
         item.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : allMovies;
-
+    
   return (
     <>
       {firstName && <Welcome> Welcome back, {firstName} </Welcome>}

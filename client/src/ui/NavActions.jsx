@@ -43,7 +43,7 @@ function NavActions() {
   const navigate = useNavigate();
 
   if (isLoading) return <span> Loading... </span>;
-
+    
   return (
     <ActionsContainer>
       {me && !isLoading ? (

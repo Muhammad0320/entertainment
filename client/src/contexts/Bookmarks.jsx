@@ -32,7 +32,7 @@ export function BookmarkProvider({ children }) {
 
 export const useBookmark = () => {
   const context = useContext(BookmarkContext);
-
+  
   if (!context)
     throw new Error("Bookmark context was used outside bookmark provider");
 

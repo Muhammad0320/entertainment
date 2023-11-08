@@ -12,7 +12,8 @@ import TVSeries from "./pages/TVSeries";
 import { ViewPortProvider } from "./contexts/Viewport";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
-import { BookmarkProvider } from "./contexts/Bookmarks";
+import { BookmarkProvider } from "./contexts/bookmarks";
+
 
 const queryClient = new QueryClient({
   defaultOptions: {

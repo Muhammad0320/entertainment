@@ -9,7 +9,7 @@ import {
   BookmarkEmpty,
 } from "../icons/icons";
 import { clampBuilder } from "../Styles/clampBuilder";
-import { useBookmark } from "../contexts/bookmarks";
+import { useBookmark } from "../contexts/Bookmarks";
 import { useCreateBookmark } from "../features/bookmark/useCreateBookmark";
 import { useDeleteBookmark } from "../features/bookmark/useDeleteBookmark";
 

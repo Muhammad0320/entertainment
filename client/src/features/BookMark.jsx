@@ -3,7 +3,7 @@ import { StyledList } from "../ui/StyledList";
 import Heading from "../ui/Heading";
 
 import styled from "styled-components";
-import { useBookmark } from "../contexts/bookmarks.jsx";
+import { useBookmark } from "../contexts/Bookmarks.jsx";
 
 const BookMarkContainer = styled.div`
   margin-bottom: 10rem;

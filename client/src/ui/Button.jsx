@@ -40,7 +40,7 @@ const Button = styled.button`
       background-color: transparent;
 
       &:hover {
-        /* border: none; */
+       
         background-color: var(--color-white);
 
         color: var(--color-primary);

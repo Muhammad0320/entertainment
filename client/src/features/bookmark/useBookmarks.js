@@ -5,7 +5,7 @@ export const useBookmarks = () => {
   const { data: myBookmarks, isLoading } = useQuery({
     queryFn: bookmarkApi,
 
-    queryKey: ["my-bookmark"],
+    queryKey: ["my-bookmarks"],
   });
 
   return { myBookmarks, isLoading };
