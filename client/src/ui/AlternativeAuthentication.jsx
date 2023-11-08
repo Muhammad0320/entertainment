@@ -24,7 +24,7 @@ function AlternativeAuthentication({ method }) {
 
   const to = method === "Login" ? "/signup" : "/login";
 
-  return (  
+  return (
     <StyledAuth>
       <span> {methodText} </span>
       <NavLink to={to}> {method} </NavLink>

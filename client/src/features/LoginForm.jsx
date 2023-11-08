@@ -70,7 +70,7 @@ function LoginForm() {
           {isLoading ? "Logging you in..." : "Login to your account"}{" "}
         </Button>
 
-        <AlternativeAuthentication method="signup" />
+        <AlternativeAuthentication method="Login" />
       </Form>
     </FormContainer>
   );

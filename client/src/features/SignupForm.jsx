@@ -95,7 +95,7 @@ function SignupForm() {
           {isLoading ? "Creating new account..." : "Create new account"}{" "}
         </Button>
 
-        <AlternativeAuthentication method="Login" />
+        <AlternativeAuthentication method="signup" />
       </Form>
     </FormContainer>
   );
