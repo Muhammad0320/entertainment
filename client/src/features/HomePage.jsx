@@ -34,10 +34,12 @@ function HomePage() {
         item.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : allMovies;
-    
+
   return (
     <>
-      {firstName && <Welcome> Welcome back, {firstName} </Welcome>}
+      {firstName && (
+        <Welcome> Welcome back, {firstName.toUpperCase()} </Welcome>
+      )}
 
       <Header
         placeholder="Search for movies or TV series"
