@@ -28,7 +28,7 @@ function TvSeries() {
       <Heading>
         {" "}
         {searchQuery
-          ? `Found ${filteredTv.length} for '${searchQuery}' `
+          ? `Found ${filteredTv.length} results for '${searchQuery}' `
           : "TV Series"}{" "}
       </Heading>
 

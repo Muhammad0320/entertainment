@@ -28,7 +28,7 @@ function Movie() {
       <Heading>
         {" "}
         {searchQuery
-          ? `Found ${filteredMovie.length} for '${searchQuery}' `
+          ? `Found ${filteredMovie.length} results for '${searchQuery}' `
           : "Movies"}{" "}
       </Heading>
 

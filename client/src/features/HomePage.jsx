@@ -53,7 +53,7 @@ function HomePage() {
         <Heading>
           {" "}
           {searchQuery
-            ? `Found ${movieData.length} for '${searchQuery}' `
+            ? `Found ${movieData.length} results for '${searchQuery}' `
             : "Recommended for you"}{" "}
         </Heading>
       </ContainerHomePage>
