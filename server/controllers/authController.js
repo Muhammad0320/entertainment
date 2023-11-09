@@ -31,7 +31,7 @@ const sendJwt = (res, user, status) => {
     ),
 
     httpOnly: true,
-    secure: true,
+    secure: process.env.NODE_ENV === "production",
     sameSite: "None"
   });
 
