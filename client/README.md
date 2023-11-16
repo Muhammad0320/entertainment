@@ -37,3 +37,7 @@
 ## Website Preview
 
 You can preview this website at ``
+
+## Contact
+
+For any inquiries, please contact us at `balogunmuhammadawwal4@gmail.com`
