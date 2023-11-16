@@ -27,3 +27,9 @@
 - Backend: Node.js, Express.js,Bcrypt.js, Express-mongo-sanitize, Morgan - Cors - Cookie-parser - xss-clean, express-rate-limit, Helmet, HPP...
 
 - Database: NoSQL database, MongoDB, Mongoose.
+
+## Deployment
+
+- Frontend: Vercel, Github, Netify,
+
+-Backend: OnRender, Github
