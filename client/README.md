@@ -19,3 +19,7 @@
 - Authentication: In this app unauthenticated user cannot access the applicaition without going through sign in or signup process, because if a user is authenticated we user the currently signed in user identity to saved the user's actions like bookmark, so that two user's bookmarks cannot be the same.
 
 - Feedback window - A fun little and minimalistic popup window which act as give the users a feedback about their currently fultilled request, activitiy or interaction with the app.
+
+## Technologies used
+
+- Frontend: React.js,React query, Axios, React hot toast , HTML5, CSS3, CSS in JS: React Styled component, React-hook-form, React-router, React-router-dom,React Cotext API and lot more...
