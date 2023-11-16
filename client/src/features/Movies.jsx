@@ -16,7 +16,7 @@ function Movie() {
         movie.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : movieCategory;
-
+  
   return (
     <>
       <Header
