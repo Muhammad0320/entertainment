@@ -1,12 +1,12 @@
 # Enteraiment web app
 
-## Desccription
+## Description
 
 **A fully functional and responsive MERN Stack entertainment application with interactive user interface and a nice user experice. This application comes with cool features like browsing through movies, separating movies into their distinct categories, a nice and intelligent search funcitionality across all movies categories, adding movies to bookmark; which is persisted in the database, Realtime Authentication: signing in, signing up and logging out functionalities and on top of those a readily learned user interface and lot more.**
 
 ## Features
 
-- Movies List
+- Movies list: A list which shows the list of all movies.
 
 - Movie details with the release year, thumbnail, categories, movie rating and more...
 
