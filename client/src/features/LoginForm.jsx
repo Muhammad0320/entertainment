@@ -3,11 +3,10 @@ import Form from "../ui/Form";
 import FormRow from "../ui/FormRow";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
-import AlternativeAuthentication from "../ui/AlternativeAuthentication";
 import { useForm } from "react-hook-form";
-import { FormContainer } from "../ui/FormContainer";
-
 import { useLogin } from "./Auth/useLogin";
+import { FormContainer } from "../ui/FormContainer";
+import AlternativeAuthentication from "../ui/AlternativeAuthentication";
 
 function LoginForm() {
   const { login, isLoading } = useLogin();
