@@ -1,14 +1,14 @@
+import SVG from "react-inlinesvg";
 import { NavLink } from "react-router-dom";
 import { styled } from "styled-components";
+import { clampBuilder } from "../Styles/clampBuilder";
 
-import SVG from "react-inlinesvg";
 import {
   IconNavBookmark,
   IconNavHome,
   IconNavMovies,
   IconNavTv,
 } from "../icons/icons";
-import { clampBuilder } from "../Styles/clampBuilder";
 
 const NavList = styled.ul`
   display: flex;
