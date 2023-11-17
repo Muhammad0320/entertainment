@@ -1,9 +1,8 @@
 import { useState } from "react";
+import Header from "../ui/Header";
+import Heading from "../ui/Heading";
 import GridItem from "../ui/GridItem";
 import { StyledList } from "../ui/StyledList";
-import Heading from "../ui/Heading";
-
-import Header from "../ui/Header";
 import { useGetMoviesByCategory } from "./movies/useGetMoviesByCategory";
 
 function TvSeries() {
