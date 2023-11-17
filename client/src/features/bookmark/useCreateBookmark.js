@@ -1,6 +1,6 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createBookmarkApi } from "../../api/apiBookmark";
 import toast from "react-hot-toast";
+import { createBookmarkApi } from "../../api/apiBookmark";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export const useCreateBookmark = () => {
   const queryClient = useQueryClient();
