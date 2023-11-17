@@ -1,16 +1,13 @@
-import GridItem from "../ui/GridItem";
-import { StyledList } from "../ui/StyledList";
-import Heading from "../ui/Heading";
-
-import Header from "../ui/Header";
-
-import TrendingGridLayout from "../ui/TrendingGridLayout";
 import { useState } from "react";
-
+import Header from "../ui/Header";
+import Heading from "../ui/Heading";
+import GridItem from "../ui/GridItem";
 import styled from "styled-components";
-import { clampBuilder } from "../Styles/clampBuilder";
-import { useGetMovies } from "./movies/useGetMovies";
 import { useGetMe } from "./user/useGetMe";
+import { StyledList } from "../ui/StyledList";
+import { useGetMovies } from "./movies/useGetMovies";
+import { clampBuilder } from "../Styles/clampBuilder";
+import TrendingGridLayout from "../ui/TrendingGridLayout";
 
 const ContainerHomePage = styled.div`
   margin-block-start: ${() => clampBuilder(350, 1200, 3, 4.5)};
