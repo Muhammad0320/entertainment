@@ -40,13 +40,17 @@ function NavActions() {
 
   const { me, isLoading } = useGetMe();
 
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-
-    logout();
-  };
-
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout(_, {
+      onSuccess: () => {
+        localStorage.removeItem("user");
+
+        navigate("/login");
+      },
+    });
+  };
 
   if (isLoading) return <span> Loading... </span>;
 
