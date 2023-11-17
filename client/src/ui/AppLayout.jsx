@@ -1,8 +1,7 @@
-import { styled } from "styled-components";
-
-import { Outlet } from "react-router-dom";
-import { clampBuilder } from "../Styles/clampBuilder";
 import NavBar from "./Navbar";
+import { Outlet } from "react-router-dom";
+import { styled } from "styled-components";
+import { clampBuilder } from "../Styles/clampBuilder";
 
 const StyledApp = styled.div`
   min-height: 100dvh;
