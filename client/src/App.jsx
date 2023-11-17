@@ -13,6 +13,7 @@ import { ViewPortProvider } from "./contexts/Viewport";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import { BookmarkProvider } from "./contexts/Bookmarks";
+import ProtectedRoutes from "./features/Auth/ProtectedRoutes.jsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,7 +31,13 @@ function App() {
           <GlobalStyles />
           <BrowserRouter>
             <Routes>
-              <Route element={<AppLayout />}>
+              <Route
+                element={
+                  <ProtectedRoutes>
+                    <AppLayout />
+                  </ProtectedRoutes>
+                }
+              >
                 <Route index element={<Navigate replace to="/home" />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/movies" element={<Movies />} />
@@ -53,7 +60,7 @@ function App() {
                 },
 
                 success: {
-                  duration: 4000,
+                  duration: 3500,
                 },
 
                 style: {
