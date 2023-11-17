@@ -1,19 +1,18 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-
 import Home from "./pages/Home";
+import Signup from "./pages/Signup";
 import Login from "./pages/Login.jsx";
+import AppLayout from "./ui/AppLayout";
 import Movies from "./pages/MoviesPage";
 import Bookmark from "./pages/Bookmark";
-import AppLayout from "./ui/AppLayout";
-import Signup from "./pages/Signup";
+import TVSeries from "./pages/TVSeries";
+import { Toaster } from "react-hot-toast";
 import PageNotFound from "./pages/PageNotFound";
 import GlobalStyles from "./Styles/GlobalStyles";
-import TVSeries from "./pages/TVSeries";
 import { ViewPortProvider } from "./contexts/Viewport";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "react-hot-toast";
 import { BookmarkProvider } from "./contexts/Bookmarks";
 import ProtectedRoutes from "./features/Auth/ProtectedRoutes.jsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 const queryClient = new QueryClient({
   defaultOptions: {
