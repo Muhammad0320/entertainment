@@ -1,6 +1,10 @@
-import { css, styled } from "styled-components";
-
 import SVG from "react-inlinesvg";
+import { css, styled } from "styled-components";
+import { useBookmark } from "../contexts/Bookmarks";
+import { clampBuilder } from "../Styles/clampBuilder";
+import { useCreateBookmark } from "../features/bookmark/useCreateBookmark";
+import { useDeleteBookmark } from "../features/bookmark/useDeleteBookmark";
+
 import {
   TvIcon,
   MovieIcon,
@@ -8,10 +12,6 @@ import {
   BookmarkFull,
   BookmarkEmpty,
 } from "../icons/icons";
-import { clampBuilder } from "../Styles/clampBuilder";
-import { useBookmark } from "../contexts/Bookmarks";
-import { useCreateBookmark } from "../features/bookmark/useCreateBookmark";
-import { useDeleteBookmark } from "../features/bookmark/useDeleteBookmark";
 
 const StyledList = styled.li`
   display: grid;
