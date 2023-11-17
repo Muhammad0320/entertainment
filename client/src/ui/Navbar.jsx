@@ -7,7 +7,7 @@ import NavActions from "./NavActions";
 
 const StyledNavBar = styled.aside`
   text-align: center;
-  
+
   border-radius: ${() => clampBuilder(950, 1200, 1, 2)};
 
   background-color: var(--color-blue-dark);
@@ -17,8 +17,9 @@ const StyledNavBar = styled.aside`
   justify-content: space-between;
   height: max-content;
   grid-row: 1 / 2;
-  padding: ${() => clampBuilder(350, 950, 1, 1.5)}
-    ${() => clampBuilder(350, 950, 1.2, 2)};
+  padding-block: ${() => clampBuilder(350, 950, 1, 1.5)};
+
+  padding-inline: ${() => clampBuilder(350, 950, 1.2, 2)};
 
   @media (max-width: 950px) {
   }

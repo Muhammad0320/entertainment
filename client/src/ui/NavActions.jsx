@@ -43,7 +43,7 @@ function NavActions() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    logout(_, {
+    logout("", {
       onSuccess: () => {
         localStorage.removeItem("user");
 
