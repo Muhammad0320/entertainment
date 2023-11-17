@@ -1,11 +1,10 @@
-import styled from "styled-components";
-import { clampBuilder } from "../Styles/clampBuilder";
-import { useGetMe } from "../features/user/useGetMe";
-
-import { HiArrowRightOnRectangle } from "react-icons/hi2";
 import Button from "./Button";
+import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useGetMe } from "../features/user/useGetMe";
+import { clampBuilder } from "../Styles/clampBuilder";
 import { useLogout } from "../features/Auth/useLogout";
+import { HiArrowRightOnRectangle } from "react-icons/hi2";
 
 const ActionsContainer = styled.div`
   display: flex;
