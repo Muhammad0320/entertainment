@@ -1,9 +1,7 @@
-import { styled } from "styled-components";
-
-import { Link } from "react-router-dom";
-
 import SVG from "react-inlinesvg";
+import { Link } from "react-router-dom";
 import { IconLogo } from "../icons/icons";
+import { styled } from "styled-components";
 
 const StyledLogo = styled.div`
   position: relative;
