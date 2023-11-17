@@ -21,6 +21,11 @@ function SignupForm() {
     signup(
       { name, email, password, passwordConfirm },
       {
+        onSuccess: (data) => {
+          console.log(data);
+        },
+      },
+      {
         onSettled: () => {
           reset();
         },

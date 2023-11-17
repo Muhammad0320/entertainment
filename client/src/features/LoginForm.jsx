@@ -22,6 +22,11 @@ function LoginForm() {
     login(
       { email, password },
       {
+        onSuccess: (data) => {
+          console.log(data);
+        },
+      },
+      {
         onSettled: () => {
           reset();
         },
