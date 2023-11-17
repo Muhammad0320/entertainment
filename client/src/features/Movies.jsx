@@ -1,9 +1,8 @@
 import { useState } from "react";
-import GridItem from "../ui/GridItem";
-import { StyledList } from "../ui/StyledList";
 import Header from "../ui/Header";
 import Heading from "../ui/Heading";
-
+import GridItem from "../ui/GridItem";
+import { StyledList } from "../ui/StyledList";
 import { useGetMoviesByCategory } from "./movies/useGetMoviesByCategory";
 
 function Movie() {
@@ -16,7 +15,7 @@ function Movie() {
         movie.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : movieCategory;
-  
+
   return (
     <>
       <Header
