@@ -1,12 +1,12 @@
-import Heading from "../ui/Heading";
 import Form from "../ui/Form";
-import FormRow from "../ui/FormRow";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
-import AlternativeAuthentication from "../ui/AlternativeAuthentication";
+import Heading from "../ui/Heading";
+import FormRow from "../ui/FormRow";
 import { useForm } from "react-hook-form";
-import { FormContainer } from "../ui/FormContainer";
 import { useSignup } from "./Auth/useSignup";
+import { FormContainer } from "../ui/FormContainer";
+import AlternativeAuthentication from "../ui/AlternativeAuthentication";
 
 function SignupForm() {
   const { signup, isLoading } = useSignup();
