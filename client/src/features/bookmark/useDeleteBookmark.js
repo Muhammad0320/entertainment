@@ -1,6 +1,6 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { deleteBookmarkApi } from "../../api/apiBookmark";
 import toast from "react-hot-toast";
+import { deleteBookmarkApi } from "../../api/apiBookmark";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export const useDeleteBookmark = () => {
   const queryClient = useQueryClient();
@@ -9,7 +9,7 @@ export const useDeleteBookmark = () => {
     mutationFn: deleteBookmarkApi,
 
     onSuccess: () => {
-      toast.success("succesfully removed bookmark");
+      toast.success("Bookmark successfully removed");
 
       queryClient.invalidateQueries({ queryKey: ["my-bookmarks"] });
     },
