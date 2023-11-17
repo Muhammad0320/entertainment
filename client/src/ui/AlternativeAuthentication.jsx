@@ -1,6 +1,6 @@
+import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { clampBuilder } from "../Styles/clampBuilder";
-import styled from "styled-components";
 
 const StyledAuth = styled.div`
   display: flex;

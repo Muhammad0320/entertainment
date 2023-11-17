@@ -1,9 +1,8 @@
-import { styled } from "styled-components";
-import MainNav from "./MainNav";
 import Logo from "./Logo";
-
-import { clampBuilder } from "../Styles/clampBuilder";
+import MainNav from "./MainNav";
 import NavActions from "./NavActions";
+import { styled } from "styled-components";
+import { clampBuilder } from "../Styles/clampBuilder";
 
 const StyledNavBar = styled.aside`
   text-align: center;
