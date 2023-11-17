@@ -9,7 +9,7 @@ export const useDeleteBookmark = () => {
     mutationFn: deleteBookmarkApi,
 
     onSuccess: () => {
-      toast.success("succesfully deleted bookmark");
+      toast.success("succesfully removed bookmark");
 
       queryClient.invalidateQueries({ queryKey: ["my-bookmarks"] });
     },

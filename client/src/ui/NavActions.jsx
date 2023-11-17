@@ -40,14 +40,20 @@ function NavActions() {
 
   const { me, isLoading } = useGetMe();
 
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+
+    logout();
+  };
+
   const navigate = useNavigate();
 
   if (isLoading) return <span> Loading... </span>;
-    
+
   return (
     <ActionsContainer>
       {me && !isLoading ? (
-        <LogoutIcon onClick={logout}>
+        <LogoutIcon onClick={handleLogout}>
           {" "}
           <HiArrowRightOnRectangle />{" "}
         </LogoutIcon>
