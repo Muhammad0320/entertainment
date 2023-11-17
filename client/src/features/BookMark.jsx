@@ -1,8 +1,7 @@
-import GridItem from "../ui/GridItem";
-import { StyledList } from "../ui/StyledList";
 import Heading from "../ui/Heading";
-
+import GridItem from "../ui/GridItem";
 import styled from "styled-components";
+import { StyledList } from "../ui/StyledList";
 import { useBookmark } from "../contexts/Bookmarks.jsx";
 
 const BookMarkContainer = styled.div`
