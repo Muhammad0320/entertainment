@@ -1,6 +1,6 @@
-import { styled } from "styled-components";
 import Input from "./Input";
 import SVG from "react-inlinesvg";
+import { styled } from "styled-components";
 
 const StyledHeader = styled.header`
   padding: 2rem 0;
