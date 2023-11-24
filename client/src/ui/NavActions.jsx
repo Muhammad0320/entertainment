@@ -56,7 +56,7 @@ function NavActions() {
   return (
     <ActionsContainer>
       {me && !isLoading ? (
-        <LogoutIcon onClick={handleLogout}>
+        <LogoutIcon onClick={handleLogout} title="Logout">
           {" "}
           <HiArrowRightOnRectangle />{" "}
         </LogoutIcon>
