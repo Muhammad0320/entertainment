@@ -22,6 +22,7 @@ function SignupForm() {
       { name, email, password, passwordConfirm },
       {
         onSuccess: (data) => {
+          console.log(data);
           localStorage.setItem("user", JSON.stringify(data.user));
         },
       },
