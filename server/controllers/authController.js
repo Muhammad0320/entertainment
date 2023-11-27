@@ -31,8 +31,8 @@ const sendJwt = (res, user, status) => {
     ),
 
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "None"
+    secure: process.env.NODE_ENV === "production"
+    // sameSite: "None"
   });
 
   res.status(status).json({
